@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getWaUrl } from '@/lib/whatsapp';
 
 const WA_URL = getWaUrl('Hola! Quiero conocer más sobre Hello Bubba 3D y sus juguetes 💜');
@@ -13,20 +14,14 @@ export default function FounderSection() {
             <div className="relative">
               {/* Círculo de foto (placeholder premium) */}
               <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-lila via-lila-soft to-menta" />
-                {/* Silueta decorativa */}
-                <div className="absolute inset-0 flex flex-col items-center justify-end pb-4">
-                  <svg viewBox="0 0 120 130" className="w-48 h-48 opacity-30" aria-hidden="true">
-                    {/* Cabeza */}
-                    <circle cx="60" cy="38" r="28" fill="white" />
-                    {/* Cuerpo */}
-                    <path d="M20 130 Q20 80 60 76 Q100 80 100 130 Z" fill="white" />
-                  </svg>
-                </div>
-                {/* Texto central */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-7xl font-black text-white/20 select-none">Á</span>
-                </div>
+                <Image
+                  src="/africa.jpg"
+                  alt="África, fundadora de Hello Bubba 3D"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 256px, 320px"
+                  priority
+                />
               </div>
 
               {/* Badge flotante */}
