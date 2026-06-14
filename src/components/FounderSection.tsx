@@ -18,7 +18,7 @@ export default function FounderSection() {
                   src="/africa.jpg"
                   alt="África, fundadora de Hello Bubba 3D"
                   fill
-                  className="object-cover object-center -rotate-90 scale-150"
+                  className="object-cover object-center -rotate-90"
                   sizes="(max-width: 1024px) 256px, 320px"
                   priority
                 />
