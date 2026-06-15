@@ -6,10 +6,6 @@ Landing page del emprendimiento de juguetes impresos en 3D de África, diseñada
 
 ---
 
-![Hello Bubba 3D](public/africa.jpg)
-
----
-
 ## Stack
 
 - **Next.js 15** (App Router, React 19)
