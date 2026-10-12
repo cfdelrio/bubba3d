@@ -47,7 +47,7 @@ export default function Footer() {
               Seguinos en
             </h3>
             <a
-              href="https://www.instagram.com/hello.bubba3d"
+              href="https://www.instagram.com/estudio.ork/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 text-muted hover:text-lila-dark transition-colors duration-150 font-semibold text-sm"
