@@ -26,12 +26,21 @@ export const metadata: Metadata = {
     siteName: 'Bubba3D',
     locale: 'es_AR',
     type: 'website',
+    images: [
+      {
+        url: `${SITE_URL}/og-cover.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Bubba3D — juguetes impresos en 3D personalizados, hechos a pedido en Argentina',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Juguetes impresos en 3D personalizados | Bubba3D Argentina',
     description:
       'Diseñamos y fabricamos juguetes y objetos personalizados, hechos a pedido en Argentina.',
+    images: [`${SITE_URL}/og-cover.png`],
   },
 };
 
