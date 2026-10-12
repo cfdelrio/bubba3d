@@ -1,5 +1,6 @@
 import LogoIcon from '@/components/illustrations/LogoIcon';
 import { getWaUrl } from '@/lib/whatsapp';
+import OrkLink from '@/components/OrkLink';
 
 const WA_URL = getWaUrl('Hola Hello Bubba 3D! 👋');
 
@@ -25,7 +26,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 lg:px-8 py-12 lg:py-16">
 
         {/* Grid principal */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
 
           {/* Logo + tagline */}
           <div className="flex flex-col gap-4">
@@ -77,6 +78,14 @@ export default function Footer() {
               </span>
               WhatsApp
             </a>
+          </div>
+
+          {/* ORK3D — bloque contextual */}
+          <div className="flex flex-col gap-4">
+            <h3 className="font-extrabold text-sm text-ink uppercase tracking-wider">
+              ¿Buscás premios?
+            </h3>
+            <OrkLink />
           </div>
 
         </div>

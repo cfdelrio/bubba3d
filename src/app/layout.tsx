@@ -9,17 +9,55 @@ const nunito = Nunito({
   variable: '--font-nunito',
 });
 
+const SITE_URL = 'https://www.bubba3d.com.ar';
+
 export const metadata: Metadata = {
-  title: 'Hello Bubba 3D — Juguetes impresos en 3D hechos para imaginar',
+  title: 'Juguetes impresos en 3D personalizados | Bubba3D Argentina',
   description:
-    'Juguetes premium impresos en 3D, diseñados en Argentina, hechos a pedido y personalizados con mucho amor.',
-  keywords: ['juguetes 3D', 'impresión 3D', 'juguetes personalizados', 'Argentina', 'Hello Bubba 3D'],
+    'Juguetes y objetos impresos en 3D, diseñados y fabricados en Argentina. Piezas personalizadas, regalos y productos hechos a pedido con los colores y detalles que querés.',
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
-    title: 'Hello Bubba 3D',
-    description: 'Juguetes impresos en 3D, hechos para imaginar.',
+    title: 'Juguetes impresos en 3D personalizados | Bubba3D',
+    description:
+      'Diseñamos y fabricamos juguetes y objetos personalizados, hechos a pedido en Argentina. Colores a elección, diseños propios.',
+    url: SITE_URL,
+    siteName: 'Bubba3D',
     locale: 'es_AR',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Juguetes impresos en 3D personalizados | Bubba3D Argentina',
+    description:
+      'Diseñamos y fabricamos juguetes y objetos personalizados, hechos a pedido en Argentina.',
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'Bubba3D',
+      alternateName: 'Hello Bubba 3D',
+      url: SITE_URL,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/favicon.svg` },
+      areaServed: { '@type': 'Country', name: 'Argentina' },
+      sameAs: ['https://www.instagram.com/hello.bubba3d'],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: 'Bubba3D',
+      description: 'Juguetes impresos en 3D personalizados, hechos a pedido en Argentina.',
+      publisher: { '@id': `${SITE_URL}/#organization` },
+      inLanguage: 'es-AR',
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -27,6 +65,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es-AR" className={nunito.variable}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body>
         <a
